@@ -66,5 +66,14 @@ git branch -r
 - commit history 확인
 ```
 git log
-git log --oneline    //한줄 로그
+git log --oneline      //한줄 로그
+```
+
+<br />
+
+- 사용자 정보
+```
+git config --list              //정보 보기
+
+git config user.name 새이름    //user.name 변경
 ```
