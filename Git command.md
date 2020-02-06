@@ -75,5 +75,5 @@ git log --oneline      //한줄 로그
 ```
 git config --list              //정보 보기
 
-git config user.name 새이름    //user.name 변경
+git config --global user.name 새이름    //user.name 변경
 ```
