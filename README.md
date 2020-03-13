@@ -1,2 +1,6 @@
 # Today-I-Learned
-Today I Learned - about EVERYTHING
+
+- C
+- C#
+- HTML
+- Javascript
