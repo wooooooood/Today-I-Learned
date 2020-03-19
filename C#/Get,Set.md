@@ -32,3 +32,14 @@ public int property
   }
 }
 ```
+```cs
+public int property { get => GetSomething(); }
+//same with
+public int property
+{
+  get 
+  {
+    return GetSomething();
+  }
+}
+```
