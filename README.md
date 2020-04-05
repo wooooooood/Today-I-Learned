@@ -1,6 +1,6 @@
 # Today-I-Learned
 
-- C
-- C#
-- HTML
-- Javascript
+- [C#](./C#)
+- [C++](./C++)
+- [HTML](./HTML)
+- [Javascript](./Javascript)
