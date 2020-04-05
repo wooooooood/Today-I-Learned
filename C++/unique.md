@@ -1,4 +1,4 @@
-# unique
+# Unique
 
 범위 안에서 연속된 수들 중 중복되는 값을 제거, unique한 값만 남긴다.
 > Return : An iterator to the element that follows the last element not removed.  

@@ -2,28 +2,34 @@
 
 ### Public  
 Can be accessed by any other code in the same assembly or another assembly that references it.  
+
 ![alt text](https://i.stack.imgur.com/VGgjh.png "public")
 
 ### Private
-Can only be accessed by code in the **same class or struct**.
+Can only be accessed by code in the **same class or struct**.  
+
 ![alt text](https://i.stack.imgur.com/SdeM9.png "private")
 
 ### Protected
-Can only be accessed by code in the **same class or struct**, or in a **derived class**.
+Can only be accessed by code in the **same class or struct**, or in a **derived class**.  
+
 ![alt text](https://i.stack.imgur.com/uniOu.png "protected")
 
 ### Private protected (added in C# 7.2)
 Can only be accessed by code in the **same class or struct**, or in a **derived class from the same assembly**, but *not* from another assembly.  
 `private` outside (the same assembly) `protected` inside (same assembly)  
+
 ![alt text](https://i.stack.imgur.com/ACp0t.png "private protected")
 
 ### Internal  
-Can be accessed by any code in the **same assembly**, but *not* from another assembly.
+Can be accessed by any code in the **same assembly**, but *not* from another assembly.  
+
 ![alt text](https://i.stack.imgur.com/8o7Dm.png "internal")
 
 ### Protected internal
 Can be accessed by any code in the **same assembly**, or by any **derived class in another assembly**.  
-`protected` outside (the same assembly) `internal` inside (same assembly)
+`protected` outside (the same assembly) `internal` inside (same assembly)  
+
 ![alt text](https://i.stack.imgur.com/VaQQ9.png "protected internal")
 
 ### Default types
