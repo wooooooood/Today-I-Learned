@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Copy into clipboard example</title>
+</head>
+
+<body>
+    <h1 id="copyText">Click this to Copy!</h1>
+    <p id="resultText"></p>
+</body>
+<script type="text/javascript">
+    (document.querySelector('#copyText').addEventListener('click', (e) => {
+        try{
+            const selection = window.getSelection()
+            const range = document.createRange()
+            range.selectNodeContents(e.currentTarget)
+            selection.removeAllRanges()
+            selection.addRange(range)
+            document.execCommand('copy')
+
+            document.querySelector('#resultText').innerText = 'Success. Try to paste it somewhere'
+        } catch (ex) {
+            document.querySelector('#resultText').innerText = `Fail. ${ex}`
+        }
+    }))
+</script>
+
+</html>
+<!-- ref: https://alligator.io/js/copying-to-clipboard/ -->
