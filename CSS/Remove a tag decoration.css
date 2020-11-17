@@ -1,0 +1,9 @@
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+/*
+use class "text-decoration-none" in Bootstrap4+
+use a:hover, a:focus, a:visited if needed
+*/
