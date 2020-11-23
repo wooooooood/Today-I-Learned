@@ -1,0 +1,7 @@
+@@media only screen and (max-width: 960px) {
+    #stickyBanner {
+        position: sticky;
+        position: -webkit-sticky;
+        bottom: 10px; /* or top: 10px */
+    }
+}
