@@ -16,6 +16,7 @@ git status          //Stage, unstage 상태확인
 - Commit
 ```
 git commit
+git commit -m "message"
 ```
 - Push
 ```
@@ -43,38 +44,4 @@ git reset --hard    //Force Unstage, Undo changes
 - Commit Message 변경 (Commit 후 Push 전, 가장 최근 commit에 대해서)
 ```
 git commit --amend
-```
-
-<br />
-
-### 3. 브랜치
-- 현재 로컬 브랜치 이름 변경  
-```
-git branch -m 변경할 이름
-```
-
-<br />
-
-- Remote branch 포함한 모든 브랜치 확인
-```
-git branch -r
-```
-
-<br />
-
-### 4. 기타
-- commit history 확인
-```
-git log
-git log --oneline      //한줄 로그
-```
-
-<br />
-
-- 사용자 정보
-```
-git config --list                       //정보 보기
-
-git config --global user.name 새이름    //user.name 변경, 이름에 whitespace 포함된 경우 "새 이름"
-git config --global --unset-all user.name
 ```
