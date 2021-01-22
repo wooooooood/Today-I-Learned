@@ -34,3 +34,10 @@ git branch -m 변경할이름
 ```
 git branch -D 삭제할브랜치이름
 ```
+
+- [pr 브랜치로 checkout하여 확인](https://docs.github.com/en/github/collaborating-with-issues-and-pull-requests/checking-out-pull-requests-locally)  
+`upstream` 또는 `origin`  
+`ID`는 PR번호 #ID
+```
+$ git fetch upstream pull/ID/head:BRANCHNAME
+```
