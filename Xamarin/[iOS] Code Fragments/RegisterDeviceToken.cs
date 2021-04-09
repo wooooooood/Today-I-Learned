@@ -14,7 +14,7 @@ public override bool FinishedLaunching(UIApplication app, NSDictionary options)
 
         if (approved && alertSettingEnabled && soundSettingEnabled && badgeSettingEnabled)
         {
-            UIApplication.SharedApplication.RegisterForRemoteNotifications;
+            UIApplication.SharedApplication.RegisterForRemoteNotifications();
         }
         else
         {
