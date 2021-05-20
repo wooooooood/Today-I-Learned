@@ -1,0 +1,7 @@
+- GoFullPage: 스크린 캡쳐 (단축 `Alt+Shift+P`)
+- ColorZilla: color picker
+- Pocket: bookmark 웹+모바일 연동
+- Bulk Image Downloader: 웹사이트 이미지 다운로더
+- Grammarly: 영어 문법 체크
+- Octotree: 깃헙 레포 트리구조로 보여준다
+- AHA Music: 재생중인 음악 뭔지
