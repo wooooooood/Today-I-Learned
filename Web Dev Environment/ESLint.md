@@ -1,4 +1,4 @@
-스타일을 추후 변경할 때 사용할 수 있다
+### ESLint 스타일을 변경할 때
 ```
 # Standard
 yarn add eslint-config-standard --dev
