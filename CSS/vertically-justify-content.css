@@ -1,0 +1,6 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+//https://stackoverflow.com/questions/37892142/vertically-justify-content
