@@ -22,7 +22,7 @@ module.exports = {
 
 4. Webpack
 - yarn add webpack webpack-cli webpack-dev-server --dev
-- yarn add clean-webpack-plugin css-loader file-loader html-webpack-plugin mini-css-extract-plugin style-loader url-loader --dev
+- yarn add clean-webpack-plugin css-loader html-webpack-plugin mini-css-extract-plugin style-loader --dev
 webpack.config.js
 ```
 const webpack = require("webpack");
@@ -36,7 +36,8 @@ module.exports = (env) => {
     },
     output: {
       filename: "[name].js",
-      path: path.resolve("./build"),
+      path: path.resolve("./dist"),
+      assetModuleFilename: "images/[hash][ext][query]",
     },
     plugins: [
       new HtmlWebpackPlugin({
@@ -57,22 +58,11 @@ module.exports = (env) => {
         },
         {
           test: /\.(png|jpg)$/,
-          loader: "file-loader",
-          options: {
-            publicPath: "./build/",
-            name: "[name].[ext]?[hash]",
-          },
+          type: "asset/resource",
         },
         {
-          test: /\.svg$/,
-          use: {
-            loader: "url-loader",
-            options: {
-              publicPath: "./build/",
-              name: "[name].[ext]?[hash]",
-              limit: 5000, // 5kb 미만 파일만 data url로 처리
-            },
-          },
+          test: /\.(svg)$/,
+          type: "asset/inline",
         },
       ],
     },
