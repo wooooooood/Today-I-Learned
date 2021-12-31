@@ -1,4 +1,4 @@
-### 파일로 다운로드 with `Ajax`, `ASP.NET`
+## 파일로 다운로드 with `Ajax`, `ASP.NET`
 https://stackoverflow.com/a/30704519/4894523
 
 ```cs
@@ -34,7 +34,7 @@ $("#DownloadAttachment").click(function () {
 });
 ```
 
-핵심은 여기다.  
+### 👻 핵심은 여기다.  
 `Url.Action(action, controller)`이고 내 경우는  
 `url: "@Url.Content("~")/FOLDER/PAGE?handler=MYHANDLER"`  
 `success: function(){ "@Url.Content("~")/FOLDER/PAGE?handler=MYHANDLER";}`  
@@ -44,3 +44,7 @@ success: function () {
   window.location = '@Url.Action("DownloadAttachment", "PostDetail")';
 }
 ```
+
+그리고, 엑셀파일을 다운로드하려 하는데 ajax result로 계속 `parseerror`가 뜨는 경우가 있었다. 아무리 dataype을 맞춰줘도..
+https://stackoverflow.com/a/11507572/4894523  
+remove the dataType: 'json' property from the object literal..로 해결되었다. 위에 예제 코드에는 datatype: 'json'이라고 되어있지만.
