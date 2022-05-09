@@ -1,4 +1,14 @@
-//<input type="file" accept=".xls, .xlsx" />
+# excel 파일을 업로드해서 내용을 읽는다
+
+### .cshtml
+
+```html
+<input type="file" accept=".xls, .xlsx" />
+```
+
+### .cshtml.cs
+
+```cs
 public void Import(IFormFile FormFile)
 {
   if (FormFile == null || FormFile.Length == 0)
@@ -29,3 +39,4 @@ public void Import(IFormFile FormFile)
 
   reader.Close();
 }
+```
