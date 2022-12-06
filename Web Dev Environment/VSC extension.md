@@ -6,3 +6,6 @@
 - Prettier
 - Live server
 - Import Cost
+- 코드 스크린샷
+  - [CodeSnap](https://marketplace.visualstudio.com/items?itemName=adpyke.codesnap): mac style
+  - [Polacode](https://marketplace.visualstudio.com/items?itemName=pnp.polacode); plain (개인적으로 더 나은듯)
