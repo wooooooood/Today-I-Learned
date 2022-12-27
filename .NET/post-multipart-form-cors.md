@@ -31,3 +31,18 @@ await axios.post(path, myObj, {
   },
 });
 ```
+### 만약 `List<IFormFile>`을 보낸다면
+
+```cs
+public class myObj
+{
+    public List<IFormFile> Images { get; set; }
+}
+```
+- 같은 key에 계속 append한다
+```js
+let myObj = new FormData();
+imageList.forEach((img) => {
+  docs.append(`images`, img);
+});
+```
