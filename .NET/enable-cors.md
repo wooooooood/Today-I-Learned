@@ -1,3 +1,4 @@
+# CORS 설정
 ASP.NET Core5 해결방법 중 하나: Enable CORS with Attributes
 
 
@@ -81,3 +82,11 @@ public class Startup
 ```
 
 - https://docs.microsoft.com/en-us/aspnet/core/security/cors?view=aspnetcore-5.0#attr
+
+
+# ⚠ 주의!!! multiple CORS
+- 두 개 이상의 CORS를 설정한다면, 선언 순서에 영향을 받는다. request가 들어왔을 때 첫 policy에서 매칭이 된다면 그 policy를 사용하게 된다!! 
+```cs
+app.UseCors("CORS1");
+app.UseCors("CORS2");
+```
