@@ -12,12 +12,11 @@ GPT에게 물어봤을때는 아래와 같은 이유로 Interop 사용을 권장
 - 무료 버전은 장수 제한 있음 (3장인가)
 - 한장만 하기에는 그나마 제일 괜찮음
 ### iText7 
-- 코딩으로 pdf 만드는것만 지원
-- office excel 포맷 그대로 출력이 안됨
+- 코딩으로 pdf 만드는것만 지원해서 office excel 포맷 그대로 출력이 안됨
 - 7이전 버전은 자체 버그 있음
 ### GrapeCity 
 - 유료라서 출력된 pdf에 경고문구 있음
-- `NumberToString` 결과가 ###로 표시됨"""
+- `NumberToString` 결과가 ###로 표시됨
 ### EPPlus 
 - 유료라서 실행도 안됨 (License err)
 
@@ -32,6 +31,8 @@ To find a version that is specifically compatible with Office 2019, you might ne
 어쨌든 `MSOffice.Interop`를 사용해도 네임스페이스는 동일하게 `Microsoft.Office.Interop.Excel`를 사용한다.
 
 ## 코드
+- 저장된 excel파일을 불러와서 pdf파일로 저장하는 방식
+- File IO 문제때문에 [IIS로 서버 돌리는 경우 해당 폴더 접근 설정](https://stackoverflow.com/a/28360298)을 해줘야한다
 
 ```cs
 public string ExceltoPdf(string excelLocation, string outputLocation)
@@ -39,7 +40,7 @@ public string ExceltoPdf(string excelLocation, string outputLocation)
     try
     {
         var app = new Microsoft.Office.Interop.Excel.Application();
-        app.Visible = false;
+        app.Visible = false;  // Set to true for debugging purposes
         Microsoft.Office.Interop.Excel.Workbook wkb = app.Workbooks.Open(excelLocation);
         wkb.ExportAsFixedFormat(Microsoft.Office.Interop.Excel.XlFixedFormatType.xlTypePDF, outputLocation);
 
@@ -54,6 +55,31 @@ public string ExceltoPdf(string excelLocation, string outputLocation)
         Console.WriteLine(ex.StackTrace);
         throw ex;
     }
+}
+```
+
+- 저장된 excel stream을 pdf stream으로 반환하는 방식
+```cs
+public static MemoryStream ExcelToPdf(MemoryStream excelStream)
+{
+    var app = new Excel.Application();
+    app.Visible = false; // Set to true for debugging purposes
+    MemoryStream pdfStream = new MemoryStream();
+    Excel.Workbook wkb = app.Workbooks.Open(MemoryStreamToTempFile(excelStream));
+    wkb.ExportAsFixedFormat(Excel.XlFixedFormatType.xlTypePDF, pdfStream);
+
+    wkb.Close();
+    app.Quit();
+
+    return pdfStream;
+}
+
+public static string MemoryStreamToTempFile(MemoryStream memoryStream)
+{
+    // Save the MemoryStream to a temporary file and return the file path
+    string tempFilePath = Path.GetTempFileName();
+    File.WriteAllBytes(tempFilePath, memoryStream.ToArray());
+    return tempFilePath;
 }
 ```
 
